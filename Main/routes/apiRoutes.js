@@ -1,7 +1,7 @@
-const router = require('express').Router();
-const store = require('../db/store');
+var router = require('express').Router();
+var store = require('../db/store');
 
-// GET "/api/notes" responds with all notes from the database
+// routes for notes GET
 router.get('/notes', (req, res) => {
   store
     .getNotes()
@@ -11,6 +11,7 @@ router.get('/notes', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
+//routes for notes POST
 router.post('/notes', (req, res) => {
   store
     .addNote(req.body)
@@ -18,7 +19,7 @@ router.post('/notes', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-// DELETE "/api/notes" deletes the note with an id equal to req.params.id
+// routes to delete notes
 router.delete('/notes/:id', (req, res) => {
   store
     .removeNote(req.params.id)

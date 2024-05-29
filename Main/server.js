@@ -1,10 +1,10 @@
-const express = require('express');
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+var express = require('express');
+var apiRoutes = require('./routes/apiRoutes');
+var htmlRoutes = require('./routes/htmlRoutes');
 
 // Initialize the app and create a port
-const app = express();
-const PORT = process.env.PORT || 3001;
+var app = express();
+var PORT = process.env.PORT || 3001;
 
 // Set up body parsing, static, and route middleware
 app.use(express.json());
